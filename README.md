@@ -1,0 +1,1 @@
+# Frontend-posts-vue-authentication-version
