@@ -74,7 +74,10 @@ props:['id'],
             Swal.showLoading();
 
             const options = {
-                method: "GET"
+                method: "GET",
+                headers: {
+                    'Authorization': 'Token '+localStorage.getItem('authToken')
+                }
             }
 
             const response = await fetch("http://localhost:8000/api/post/listById/"+this.id , options);
@@ -145,7 +148,10 @@ props:['id'],
 
                 const options = {
                     method: "PUT",
-                    headers: {'Content-Type': 'application/json'},
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Token '+localStorage.getItem('authToken')
+                    },
                     body:  JSON.stringify(this.post)
                 }
         

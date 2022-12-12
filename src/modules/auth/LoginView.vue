@@ -20,7 +20,7 @@
                     <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
                 </div>
                 <div>
-                    <center><button type="submit" class="btn btn-success">Ingresar</button></center>
+                    <center><router-link :to="'/'" type="submit" class="btn btn-success">Ingresar</router-link></center>
                 </div>
             </form>
         </div>

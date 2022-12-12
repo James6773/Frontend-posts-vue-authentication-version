@@ -52,7 +52,10 @@ export default {
 
             const options = {
                 method: "POST",
-                headers: {'Content-Type': 'application/json'},
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Token '+localStorage.getItem('authToken')
+                },
                 body:  JSON.stringify(this.category)
             }
 

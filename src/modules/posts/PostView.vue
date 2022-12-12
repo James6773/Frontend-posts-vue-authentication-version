@@ -119,7 +119,10 @@ export default {
                     if (result.isConfirmed) {
                         const options = {
                             method: "DELETE",
-                            headers: {'Content-Type': 'application/json'},
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': 'Token '+localStorage.getItem('authToken')
+                            }
                         }
 
                         const response = await fetch("http://localhost:8000/api/post/destroy/"+id, options);

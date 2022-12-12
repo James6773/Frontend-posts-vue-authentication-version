@@ -54,7 +54,10 @@ export default {
             Swal.showLoading();
 
             const options = {
-                method: "GET"
+                method: "GET",
+                headers: {
+                    'Authorization': 'Token '+localStorage.getItem('authToken')
+                }
             }
 
             const response = await fetch("http://localhost:8000/api/category/list", options);
@@ -112,7 +115,10 @@ export default {
                     if (result.isConfirmed) {
                         const options = {
                             method: "DELETE",
-                            headers: {'Content-Type': 'application/json'},
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': 'Token '+localStorage.getItem('authToken')
+                            }
                         }
 
                         const response = await fetch("http://localhost:8000/api/category/destroy/"+id, options);
